@@ -1,2 +1,119 @@
-# sms-api-documentation
-SMS API Documentation
+# SMS API DOCs
+
+Kwaug SMS API is to enable users who want to send messages through API, other than platform, to send messages.
+
+## Installation
+
+No installation requirements needed. Simple as sending request to server
+
+## Production server (Live)
+```
+https://sms.kwaug.net/
+```
+Please note that there is no sandbox server availed. For testing, still use the production server. To view 
+pricing, please visit the same url link
+
+## Usage
+
+### Send SMS Messages
+
+#### Error Response
+The response incase of any error is
+```json
+{
+    "error": true,
+    "message": "Error message will be here",
+    "extra": "this is only for mobile money deposit"
+}
+```
+
+#### Get REQUEST:
+
+```
+https://sms.kwaug.net/api/sendmessage/?username=admin&primary_sms_api_key=eb6dac89-6a65-458f-8470-99b415012463&phone_number=782481793&message=hello%20there
+```
+
+```bash
+curl -X GET "https://sms.kwaug.net/api/sendmessage/?username=admin&primary_sms_api_key=eb6dac89-6a65-458f-8470-99b415012463&phone_number=782481793&message=hello%20there"
+```
+
+#### Post REQUEST
+```bash
+curl -X POST "https://sms.kwaug.net/api/sendmessage/" \
+     -d '{
+        "username": "admin",
+        "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
+        "phone_number": "782481793",
+        "message": "hello there"
+     }'
+```
+
+Post url
+```
+https://sms.kwaug.net/api/postmessage/
+```
+
+Post Data
+```json
+{
+    "username": "username",
+    "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
+    "phone_number": "phone_number here",
+    "message": "hello there"
+}
+```
+
+The successful response
+```json
+{
+    "error": false,
+    "message": "Message has been sent successfully",
+    "total_cost": 40,
+    "current_account_balance": 4880
+}
+```
+
+### DEPOSIT or TOP UP Money on the Account
+
+```
+https://sms.kwaug.net/api/topupaccount/
+```
+
+POST only
+```json
+{
+    "username": "admin",
+    "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463", 
+    "amount": 500,
+    "phone_number": "07XXXXXXX"
+
+}
+```
+
+The Successful response
+```json
+{
+    "error": false,
+    "message": "Successfully Processed, Please Enter your Pin",
+    "extra": "Fraud is punishable by law and account deactivation or deletion. No refund made incase."
+}
+```
+
+The failed response
+```json
+{
+    "error": true,
+    "message": "Error message will be here"
+}
+```
+
+## Contributing
+
+Forks and pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[APACHE](https://www.apache.org/licenses/LICENSE-2.0)
