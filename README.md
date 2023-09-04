@@ -2,6 +2,7 @@
 
 Kwaug SMS API is to enable users who want to send messages through API, other than platform, to send messages.
 
+[https://sms.kwaug.net](https://sms.kwaug.net/#pricing)
 ## Installation
 
 No installation requirements needed. Simple as sending request to server
