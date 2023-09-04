@@ -30,11 +30,11 @@ The response incase of any error is
 #### Get REQUEST:
 
 ```
-https://sms.kwaug.net/api/sendmessage/?username=admin&primary_sms_api_key=eb6dac89-6a65-458f-8470-99b415012463&phone_number=782481793&message=hello%20there
+https://sms.kwaug.net/api/sendmessage/?username=admin&primary_sms_api_key=eb6dac89-6a65-458f-8470-99b415012463&phone_number=7XXXXXXXXX&message=hello%20there
 ```
 
 ```bash
-curl -X GET "https://sms.kwaug.net/api/sendmessage/?username=admin&primary_sms_api_key=eb6dac89-6a65-458f-8470-99b415012463&phone_number=782481793&message=hello%20there"
+curl -X GET "https://sms.kwaug.net/api/sendmessage/?username=admin&primary_sms_api_key=eb6dac89-6a65-458f-8470-99b415012463&phone_number=7XXXXXXXXX&message=hello%20there"
 ```
 
 #### Post REQUEST
@@ -43,7 +43,7 @@ curl -X POST "https://sms.kwaug.net/api/sendmessage/" \
      -d '{
         "username": "admin",
         "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
-        "phone_number": "782481793",
+        "phone_number": "7XXXXXXXXX",
         "message": "hello there"
      }'
 ```
@@ -58,7 +58,7 @@ Post Data
 {
     "username": "username",
     "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
-    "phone_number": "phone_number here",
+    "phone_number": "7XXXXXXXXX",
     "message": "hello there"
 }
 ```
