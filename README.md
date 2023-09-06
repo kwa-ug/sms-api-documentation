@@ -40,7 +40,7 @@ curl -X GET "https://sms.kwaug.net/api/sendmessage/?username=admin&primary_sms_a
 
 #### Post REQUEST
 ```bash
-curl -X POST "https://sms.kwaug.net/api/sendmessage/" \
+curl -X POST "https://sms.kwaug.net/api/postmessage/" \
      -d '{
         "username": "admin",
         "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
