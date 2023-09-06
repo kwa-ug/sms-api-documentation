@@ -33,12 +33,16 @@ The response incase of any error is
 ```
 https://sms.kwaug.net/api/sendmessage/?username=admin&primary_sms_api_key=eb6dac89-6a65-458f-8470-99b415012463&phone_number=7XXXXXXXXX&message=hello%20there
 ```
-
+Get (Curl) Request
 ```bash
 curl -X GET "https://sms.kwaug.net/api/sendmessage/?username=admin&primary_sms_api_key=eb6dac89-6a65-458f-8470-99b415012463&phone_number=7XXXXXXXXX&message=hello%20there"
 ```
 
 #### Post REQUEST
+
+##### Single Receipent
+
+Post (Curl) Request
 ```bash
 curl -X POST "https://sms.kwaug.net/api/postmessage/" \
      -d '{
@@ -63,6 +67,46 @@ Post Data
     "message": "hello there"
 }
 ```
+
+The successful response
+```json
+{
+    "error": false,
+    "message": "Message has been sent successfully",
+    "total_cost": 40,
+    "current_account_balance": 4880
+}
+```
+
+##### Multiple Receipents
+
+Post (Curl) Request
+```bash
+curl -X POST "https://sms.kwaug.net/api/postmessagemultiple/" \
+     -d '{
+        "username": "admin",
+        "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
+        "recipients": ["7XXXXXXXXX", "7XXXXXXXXX"],
+        "message": "hello there"
+     }'
+```
+
+Post url
+```
+https://sms.kwaug.net/api/postmessagemultiple/
+```
+
+Post Data
+```json
+{
+    "username": "username",
+    "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
+    "recipients": ["7XXXXXXXXX", "7XXXXXXXXX"],
+    "message": "hello there"
+}
+```
+
+Duplicates will be removed, invalid numbers will lead to an error, ensure the numbers are correct
 
 The successful response
 ```json
