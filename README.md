@@ -14,6 +14,9 @@ https://sms.kwaug.net/
 Please note that there is no sandbox server availed. For testing, still use the production server. To view 
 pricing, please visit the same url link
 
+## API Credentials
+To use API, you need primary_sms_api_key, find this under profile, accounts, You will see it there. 
+
 ## Usage
 
 ### Send SMS Messages
