@@ -52,7 +52,8 @@ curl -X POST "https://sms.kwaug.net/api/postmessage/" \
         "username": "admin",
         "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
         "phone_number": "7XXXXXXXXX",
-        "message": "hello there"
+        "message": "hello there",
+        "schedule_time": "2023-08-31 07:05:07.746582" // optional, examples : 2023-08-31 07:05 , 2023-08-31 07:05.99 etc
      }'
 ```
 
@@ -67,7 +68,8 @@ Post Data
     "username": "username",
     "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
     "phone_number": "7XXXXXXXXX",
-    "message": "hello there"
+    "message": "hello there",
+    "schedule_time": "2023-08-31 07:05:07.746582" // optional, examples : 2023-08-31 07:05 , 2023-08-31 07:05.99 etc
 }
 ```
 
@@ -87,11 +89,12 @@ Post (Curl) Request
 ```bash
 curl -X POST "https://sms.kwaug.net/api/postmessagemultiple/" \
      -d '{
-        "username": "admin",
+        "username": "username",
         "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
         "recipients": ["7XXXXXXXXX", "7XXXXXXXXX"],
-        "message": "hello there"
-     }'
+        "message": "hello there",
+        "schedule_time" : "2023-08-31 07:05:07.746582" // optional, examples : 2023-08-31 07:05 , 2023-08-31 07:05.99 etc
+    }'
 ```
 
 Post url
@@ -105,7 +108,8 @@ Post Data
     "username": "username",
     "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463",
     "recipients": ["7XXXXXXXXX", "7XXXXXXXXX"],
-    "message": "hello there"
+    "message": "hello there",
+    "schedule_time" : "2023-08-31 07:05:07.746582" // optional, examples : 2023-08-31 07:05 , 2023-08-31 07:05.99 etc
 }
 ```
 
