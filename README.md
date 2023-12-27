@@ -158,6 +158,36 @@ The failed response
     "message": "Error message will be here"
 }
 ```
+### CHECK Account Balance
+
+```
+https://sms.kwaug.net/api/checkbalance/
+```
+
+POST only
+```json
+{
+    "username": "admin",
+    "primary_sms_api_key": "eb6dac89-6a65-458f-8470-99b415012463"
+
+}
+```
+
+The Successful response
+```json
+{
+    "error": false,
+    "account_balance": 2350
+}
+```
+
+The failed response
+```json
+{
+    "error": true,
+    "message": "Error message will be here"
+}
+```
 
 ## Contributing
 
